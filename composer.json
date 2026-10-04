@@ -1,0 +1,77 @@
+{
+    "name": "sattorware/elephant",
+    "type": "library",
+    "description": "Async PHP on fibers: write concurrent code that reads like plain PHP — tasks, timeouts, HTTP client and server, channels, files and processes.",
+    "keywords": [
+        "async",
+        "fibers",
+        "event-loop",
+        "concurrency",
+        "http-client",
+        "http-server",
+        "channels",
+        "symfony"
+    ],
+    "homepage": "https://github.com/sattorware/elephant",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "symfony/console": "^6.4 || ^7.0 || ^8.0",
+        "symfony/clock": "^6.4 || ^7.0 || ^8.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-client": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-foundation": "^6.4 || ^7.0 || ^8.0",
+        "symfony/string": "^6.4 || ^7.0 || ^8.0",
+        "symfony/property-access": "^6.4 || ^7.0 || ^8.0",
+        "symfony/filesystem": "^6.4 || ^7.0 || ^8.0",
+        "symfony/process": "^6.4 || ^7.0 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elephant\\": "src/"
+        },
+        "files": [
+            "src/Flow/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse --memory-limit=1G --verbose",
+        "phpstan-sources": "Tests\\Support\\PhpstanSources::mirror",
+        "post-install-cmd": "@phpstan-sources",
+        "post-update-cmd": "@phpstan-sources"
+    },
+    "authors": [
+        {
+            "name": "sattorware",
+            "email": "sattorware@icloud.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^5.3",
+        "symfony/stopwatch": "^6.4 || ^7.0 || ^8.0",
+        "phpstan/phpstan": "^2.2"
+    },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "extension.neon"
+            ]
+        }
+    },
+    "support": {
+        "issues": "https://github.com/sattorware/elephant/issues",
+        "source": "https://github.com/sattorware/elephant",
+        "docs": "https://github.com/sattorware/elephant/wiki"
+    }
+}
