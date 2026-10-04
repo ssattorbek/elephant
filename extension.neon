@@ -1,0 +1,8 @@
+services:
+    -
+        class: Elephant\PHPStan\TasksReturnTypeExtension
+        tags:
+            - phpstan.broker.dynamicStaticMethodReturnTypeExtension
+
+rules:
+    - Elephant\PHPStan\TaskNotFoundRule
